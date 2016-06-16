@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_qb8akM37EdqwVrslYOdUDA" name="disruptorUML">
+  <packagedElement xmi:type="uml:Package" xmi:id="_L-YS4TLcEea6EKCHaPQ8fw" name="com">
+    <packagedElement xmi:type="uml:Package" xmi:id="_L-YS4jLcEea6EKCHaPQ8fw" name="wujh">
+      <packagedElement xmi:type="uml:Package" xmi:id="_L-YS4zLcEea6EKCHaPQ8fw" name="disruptor">
+        <packagedElement xmi:type="uml:Class" xmi:id="_MVcIBDLcEea6EKCHaPQ8fw" name="TradeTransaction">
+          <ownedAttribute xmi:id="_MWyMFTLcEea6EKCHaPQ8fw" name="id" visibility="private">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:id="_MW7VwDLcEea6EKCHaPQ8fw" name="price" visibility="private">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+          </ownedAttribute>
+          <ownedOperation xmi:id="_MW7VwTLcEea6EKCHaPQ8fw" name="getId" visibility="public">
+            <ownedParameter xmi:id="_MW7VwjLcEea6EKCHaPQ8fw" name="return" direction="return">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:id="_MW7VwzLcEea6EKCHaPQ8fw" name="setId" visibility="public">
+            <ownedParameter xmi:id="_MW7VxDLcEea6EKCHaPQ8fw" name="id">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:id="_MW7VxTLcEea6EKCHaPQ8fw" name="getPrice" visibility="public">
+            <ownedParameter xmi:id="_MW7VxjLcEea6EKCHaPQ8fw" name="return" direction="return">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:id="_MW7VxzLcEea6EKCHaPQ8fw" name="setPrice" visibility="public">
+            <ownedParameter xmi:id="_MW7VyDLcEea6EKCHaPQ8fw" name="price">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+            </ownedParameter>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_M2BslDLcEea6EKCHaPQ8fw" name="TradeTransactionInDBHandler" clientDependency="_M3z1QDLcEea6EKCHaPQ8fw _M3z1QjLcEea6EKCHaPQ8fw">
+          <interfaceRealization xmi:id="_M3z1QDLcEea6EKCHaPQ8fw" name="EventHandler&lt;TradeTransaction>" supplier="_M3g6UDLcEea6EKCHaPQ8fw" client="_M2BslDLcEea6EKCHaPQ8fw" contract="_M3g6UDLcEea6EKCHaPQ8fw"/>
+          <interfaceRealization xmi:id="_M3z1QjLcEea6EKCHaPQ8fw" name="WorkHandler&lt;TradeTransaction>" supplier="_M3z1QTLcEea6EKCHaPQ8fw" client="_M2BslDLcEea6EKCHaPQ8fw" contract="_M3z1QTLcEea6EKCHaPQ8fw"/>
+          <ownedOperation xmi:id="_M3z1RjLcEea6EKCHaPQ8fw" name="onEvent" visibility="public">
+            <ownedParameter xmi:id="_M3z1RzLcEea6EKCHaPQ8fw" name="event"/>
+            <ownedParameter xmi:id="_M3z1SDLcEea6EKCHaPQ8fw" name="sequence">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_M3z1STLcEea6EKCHaPQ8fw" name="endOfBatch">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:id="_M38_MDLcEea6EKCHaPQ8fw" name="onEvent" visibility="public">
+            <ownedParameter xmi:id="_M38_MTLcEea6EKCHaPQ8fw" name="event"/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_M3g6UDLcEea6EKCHaPQ8fw" name="EventHandler&lt;TradeTransaction>"/>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_M3z1QTLcEea6EKCHaPQ8fw" name="WorkHandler&lt;TradeTransaction>"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_NYYyxDLcEea6EKCHaPQ8fw" name="TradeTransactionJMSNotifyHandler" clientDependency="_NaK7cTLcEea6EKCHaPQ8fw">
+          <interfaceRealization xmi:id="_NaK7cTLcEea6EKCHaPQ8fw" name="EventHandler&lt;TradeTransaction>" client="_NYYyxDLcEea6EKCHaPQ8fw">
+            <supplier xmi:type="uml:Interface" href="../../../../disruptorUML.uml#_NaK7cDLcEea6EKCHaPQ8fw"/>
+            <contract href="../../../../disruptorUML.uml#_NaK7cDLcEea6EKCHaPQ8fw"/>
+          </interfaceRealization>
+          <ownedOperation xmi:id="_NaK7dTLcEea6EKCHaPQ8fw" name="onEvent" visibility="public">
+            <ownedParameter xmi:id="_NaK7djLcEea6EKCHaPQ8fw" name="event"/>
+            <ownedParameter xmi:id="_NaK7dzLcEea6EKCHaPQ8fw" name="sequence">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_NaK7eDLcEea6EKCHaPQ8fw" name="endOfBatch">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+            </ownedParameter>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_N3yEhDLcEea6EKCHaPQ8fw" name="TradeTransactionPublisher" clientDependency="_N40mlTLcEea6EKCHaPQ8fw">
+          <ownedAttribute xmi:id="_N4-XUDLcEea6EKCHaPQ8fw" name="disruptor" visibility="package"/>
+          <ownedAttribute xmi:id="_N4-XUTLcEea6EKCHaPQ8fw" name="latch" visibility="private">
+            <type xmi:type="uml:DataType" href="../../../../disruptorUML.uml#_N4OwdDLcEea6EKCHaPQ8fw"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:id="_N4-XUzLcEea6EKCHaPQ8fw" name="LOOP" visibility="private" isStatic="true">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+            <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_N4-XVDLcEea6EKCHaPQ8fw" value="100000"/>
+          </ownedAttribute>
+          <interfaceRealization xmi:id="_N40mlTLcEea6EKCHaPQ8fw" name="Runnable" supplier="_N40mlDLcEea6EKCHaPQ8fw" client="_N3yEhDLcEea6EKCHaPQ8fw" contract="_N40mlDLcEea6EKCHaPQ8fw"/>
+          <ownedOperation xmi:id="_N4-XVTLcEea6EKCHaPQ8fw" name="run" visibility="public"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_N3yEhTLcEea6EKCHaPQ8fw" name="TradeTransactionEventTranslator" visibility="package" clientDependency="_N4-XVzLcEea6EKCHaPQ8fw">
+          <ownedAttribute xmi:id="_N5HhQDLcEea6EKCHaPQ8fw" name="random" visibility="private">
+            <type xmi:type="uml:DataType" href="../../../../disruptorUML.uml#_N4OwcjLcEea6EKCHaPQ8fw"/>
+          </ownedAttribute>
+          <interfaceRealization xmi:id="_N4-XVzLcEea6EKCHaPQ8fw" name="EventTranslator&lt;TradeTransaction>" supplier="_N4-XVjLcEea6EKCHaPQ8fw" client="_N3yEhTLcEea6EKCHaPQ8fw" contract="_N4-XVjLcEea6EKCHaPQ8fw"/>
+          <ownedOperation xmi:id="_N5HhQzLcEea6EKCHaPQ8fw" name="translateTo" visibility="public">
+            <ownedParameter xmi:id="_N5HhRDLcEea6EKCHaPQ8fw" name="event"/>
+            <ownedParameter xmi:id="_N5HhRTLcEea6EKCHaPQ8fw" name="sequence">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:id="_N5HhRjLcEea6EKCHaPQ8fw" name="generateTradeTransaction" visibility="private">
+            <ownedParameter xmi:id="_N5HhRzLcEea6EKCHaPQ8fw" name="trade"/>
+            <ownedParameter xmi:id="_N5HhSDLcEea6EKCHaPQ8fw" name="return" direction="return"/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_N40mlDLcEea6EKCHaPQ8fw" name="Runnable"/>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_N4-XVjLcEea6EKCHaPQ8fw" name="EventTranslator&lt;TradeTransaction>"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_ORhaNDLcEea6EKCHaPQ8fw" name="TradeTransactionVasConsumer" clientDependency="_OSHQVTLcEea6EKCHaPQ8fw">
+          <interfaceRealization xmi:id="_OSHQVTLcEea6EKCHaPQ8fw" name="EventHandler&lt;TradeTransaction>" client="_ORhaNDLcEea6EKCHaPQ8fw">
+            <supplier xmi:type="uml:Interface" href="../../../../disruptorUML.uml#_OSHQVDLcEea6EKCHaPQ8fw"/>
+            <contract href="../../../../disruptorUML.uml#_OSHQVDLcEea6EKCHaPQ8fw"/>
+          </interfaceRealization>
+          <ownedOperation xmi:id="_OSHQWTLcEea6EKCHaPQ8fw" name="onEvent" visibility="public">
+            <ownedParameter xmi:id="_OSHQWjLcEea6EKCHaPQ8fw" name="event"/>
+            <ownedParameter xmi:id="_OSHQWzLcEea6EKCHaPQ8fw" name="sequence">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_OSHQXDLcEea6EKCHaPQ8fw" name="endOfBatch">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+            </ownedParameter>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_WnK2hDLcEea6EKCHaPQ8fw" name="Demo3">
+          <ownedOperation xmi:id="_WnwspTLcEea6EKCHaPQ8fw" name="main" visibility="public" isStatic="true">
+            <ownedParameter xmi:id="_WnwspjLcEea6EKCHaPQ8fw" name="args">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WnwspzLcEea6EKCHaPQ8fw" value="*"/>
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WnwsqDLcEea6EKCHaPQ8fw"/>
+            </ownedParameter>
+          </ownedOperation>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_L_RqxjLcEea6EKCHaPQ8fw" name="lmax">
+      <packagedElement xmi:type="uml:Package" xmi:id="_L_RqxzLcEea6EKCHaPQ8fw" name="disruptor">
+        <packagedElement xmi:type="uml:Package" xmi:id="_L_RqyjLcEea6EKCHaPQ8fw" name="dsl"/>
+      </packagedElement>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_L_RqwDLcEea6EKCHaPQ8fw" name="java">
+    <packagedElement xmi:type="uml:Package" xmi:id="_L_RqwTLcEea6EKCHaPQ8fw" name="util">
+      <packagedElement xmi:type="uml:Package" xmi:id="_L_RqwjLcEea6EKCHaPQ8fw" name="concurrent"/>
+    </packagedElement>
+  </packagedElement>
+</uml:Model>
